@@ -1,16 +1,17 @@
 import React from 'react';
-import { Card, CardTitle, Button, Col} from 'reactstrap';
+import { Card, CardTitle, Button, Col, CardLink} from 'reactstrap';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 
 import * as actions from '../redux/actions';
 import { connect } from 'react-redux';
 
 
  class Category extends React.Component {
-    next() { 
-        this.slider.slickNext() 
+    next() {
+        this.slider.slickNext()
     }
     previous() {
         this.slider.slickPrev()
@@ -77,8 +78,7 @@ import { connect } from 'react-redux';
                                     <div  key= {index}> 
                                          <Col sm="12">
                                             <Card className="cat" body key= {index}>
-                                                <CardTitle>{cat.charAt(0).toUpperCase() + cat.slice(1)}</CardTitle>
-                                                <Button outline  value={cat} onClick={(e)=>{this.selectedCategory(cat, e)}} color="info">View Joke</Button>
+                                                <CardLink onClick={(e)=>{this.selectedCategory(cat, e)}}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</CardLink>
                                             </Card>
                                         </Col>
                                      </div>
@@ -89,8 +89,8 @@ import { connect } from 'react-redux';
                     }
             </Slider>
             <div className="slider">
-                <Button outline color="warning" style={{width: 130}} basic="true" onClick={this.previous.bind(this)}>Previous</Button>
-                <Button outline color="success" style={{width: 130, marginLeft : '10px'}} basic="true" onClick={this.next.bind(this)}>Next</Button>
+                <Button outline color="warning" style={{width: 100}} basic="true" onClick={this.previous.bind(this)}>Previous</Button>
+                <Button outline color="warning" style={{width: 100, marginLeft : '10px'}} basic="true" onClick={this.next.bind(this)}>Next</Button>
             </div>
         </div>
         );

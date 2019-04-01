@@ -21,15 +21,15 @@ class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md" fixed="top">
-          <NavbarBrand href="/">ChuckNoris Jokes</NavbarBrand>
+          <NavbarBrand href="/">ChuckNoris The <strong>Boss</strong></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Random Jokes</NavLink>
+                <NavLink href="/components/">View All</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">More</NavLink>
+                <NavLink href="/">Reload</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

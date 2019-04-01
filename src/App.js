@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
+import Loader from 'react-loader-spinner';
 import './app-styles/app.css';
 
 import * as actions from './redux/actions';
 import { connect } from 'react-redux';
 
 import AppNavbar from './components/AppNavbar';
-import Main from './screens/main'
+import Main from './screens/main';
+
 
 class App extends Component {
-  componentDidMount() {
+  componentDidMount(){
     this.props.fetchCategories();
-    this.props.fetchCategory();
+    
   }
 
   render() {
     const { categories, category } = this.props;
-    console.log(this.props)
+    
     return (
       <div>
         <div className="App">
@@ -24,14 +26,14 @@ class App extends Component {
           <AppNavbar />
           <Main category={category} />
         </div>)
-          :<div className="centered"></div>
+          :<div className="centered"><Loader type="Puff" color="red" height="200" width="200"/></div>
         }
         </div>
       </div>
     );
   }
 }
-
+// mapping states to props
 function mapStateToProps({ categories , category }){
   return {
     categories,
