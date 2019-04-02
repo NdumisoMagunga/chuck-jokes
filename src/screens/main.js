@@ -1,5 +1,4 @@
 import React from 'react';
-import {Col } from 'reactstrap';
 import Category from '../components/Category';
 import DetailsView from '../components/jokes';
 
@@ -7,8 +6,8 @@ import DetailsView from '../components/jokes';
   render() {
     return (
       <div className="container" >
-          <Col sm="12"><DetailsView details={this.props.category}/></Col>
-          <Col sm="12"><Category/></Col>
+          <DetailsView details={this.props.category}/>
+          <Category/>
       </div>
     );
   }

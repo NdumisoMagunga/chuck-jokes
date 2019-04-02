@@ -20,13 +20,15 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
+        {/* navbar boilerplate from reactstrap */}
+
         <Navbar color="light" light expand="md" fixed="top">
           <NavbarBrand href="/">ChuckNoris The <strong>Boss</strong></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">View All</NavLink>
+                <NavLink href="/">View All</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/">Reload</NavLink>

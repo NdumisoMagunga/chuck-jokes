@@ -1,9 +1,8 @@
 import React from 'react';
-import { Card, CardTitle, Button, Col, CardLink} from 'reactstrap';
+import { Card, Button, Col, CardLink} from 'reactstrap';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 
 import * as actions from '../redux/actions';
 import { connect } from 'react-redux';
@@ -72,25 +71,25 @@ import { connect } from 'react-redux';
         <div className="category">
             <Slider ref={c => this.slider = c } {...settings}>
                     {
-                         categories.map((cat, index)=>{
-                            return(
-                                <div key= {index}>
-                                    <div  key= {index}> 
-                                         <Col sm="12">
-                                            <Card className="cat" body key= {index}>
-                                                <CardLink onClick={(e)=>{this.selectedCategory(cat, e)}}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</CardLink>
-                                            </Card>
-                                        </Col>
-                                     </div>
-                                </div>
-                            )
-                        })
+                        categories.map((cat, index)=>{
+                          return(
+                              <div key= {index}>
+                                  <div  key= {index}> 
+                                        <Col sm="12">
+                                          <Card className="cat" body key= {index}>
+                                              <CardLink onClick={(e)=>{this.selectedCategory(cat, e)}}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</CardLink>
+                                          </Card>
+                                      </Col>
+                                    </div>
+                              </div>
+                          )
+                      })
                          
                     }
             </Slider>
             <div className="slider">
-                <Button outline color="warning" style={{width: 100}} basic="true" onClick={this.previous.bind(this)}>Previous</Button>
-                <Button outline color="warning" style={{width: 100, marginLeft : '10px'}} basic="true" onClick={this.next.bind(this)}>Next</Button>
+                <Button className="warning" outline color="warning" style={{width: 100}} onClick={this.previous.bind(this)}>Previous</Button>
+                <Button className="warning2" outline color="warning" style={{width: 100, marginLeft : '10px'}} onClick={this.next.bind(this)}>Next</Button>
             </div>
         </div>
         );
@@ -98,7 +97,6 @@ import { connect } from 'react-redux';
 }
 
 function mapStateToProps({ categories }){
-   
     return{
         categories,  
     }

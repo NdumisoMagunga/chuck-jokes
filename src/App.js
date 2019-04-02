@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import AppNavbar from './components/AppNavbar';
 import Main from './screens/main';
 
-
 class App extends Component {
   componentDidMount(){
     this.props.fetchCategories();
